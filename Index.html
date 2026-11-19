@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<base target="_top">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Kamlesh Textiles — Digital Challan v2.2.4</title>
+<style>
+:root{--navy:#14283f;--blue:#1769aa;--blue2:#eaf4fc;--ink:#172536;--muted:#6d7b8b;--line:#dce4ec;--bg:#f3f6f9;--white:#fff;--green:#16794b;--greenbg:#e8f6ef;--amber:#946200;--amberbg:#fff5d9;--red:#bd3030;--redbg:#fff0f0;--shadow:0 8px 28px rgba(20,40,63,.07);--radius:16px}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}button,input,select,textarea{font:inherit}button{border:0;cursor:pointer;border-radius:10px;font-weight:700;padding:12px 16px;transition:.15s}button:disabled{opacity:.55;cursor:wait}.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#10588f}.btn-dark{background:var(--navy);color:#fff}.btn-light{background:#eef3f7;color:var(--navy);border:1px solid var(--line)}.btn-outline{background:#fff;color:var(--blue);border:1px solid #9bbbd5}.btn-success{background:var(--green);color:#fff}.btn-danger{background:var(--red);color:#fff}.btn-small{padding:8px 11px;font-size:12px;border-radius:8px}.hidden{display:none!important}.muted{color:var(--muted)}.small{font-size:12px}.page{max-width:1240px;margin:0 auto;padding:20px}.topbar{background:var(--navy);color:#fff;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 4px 18px #14283f24}.brand{display:flex;align-items:center;gap:12px}.brandmark{width:38px;height:38px;border-radius:11px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:18px}.brandname{font-weight:800;letter-spacing:.4px}.brandline{font-size:11px;color:#c5d7e7;margin-top:3px}.user-tools{display:flex;align-items:center;gap:10px}.user-badge{font-size:12px;background:#ffffff18;border:1px solid #ffffff35;padding:8px 10px;border-radius:30px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.topbar button{background:#ffffff16;color:#fff;border:1px solid #ffffff38;padding:9px 12px;font-size:12px}.page-title{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:12px 0 18px;flex-wrap:wrap}.page-title h1{font-size:25px;margin:0 0 6px;color:var(--navy)}.page-title p{margin:0;color:var(--muted);font-size:13px}.actions{display:flex;gap:9px;flex-wrap:wrap}.actions button{flex:1;min-width:120px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}.stat-label{font-size:12px;color:var(--muted);font-weight:700}.stat-number{font-size:28px;color:var(--navy);font-weight:800;margin-top:7px}.stat-foot{font-size:11px;color:var(--muted);margin-top:4px}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:14px 0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}.panel h2,.panel h3{color:var(--navy);margin:0}.panel h2{font-size:17px}.panel h3{font-size:15px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field label{font-size:12px;font-weight:700;color:#4b5b6c}.field input,.field select,.field textarea,.toolbar input,.toolbar select{width:100%;border:1px solid #ccd7e2;border-radius:9px;padding:11px 12px;background:#fff;color:var(--ink);outline:none;min-height:42px}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus,.toolbar select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1769aa16}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.field-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px;flex-wrap:wrap}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;-webkit-overflow-scrolling:touch}table.data-table{border-collapse:separate;border-spacing:0;width:100%;min-width:880px;background:#fff}table.data-table th{background:#f0f4f8;color:#48596a;font-size:11px;text-transform:uppercase;letter-spacing:.35px;text-align:left;padding:12px 11px;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0}table.data-table th.sortable{cursor:pointer;user-select:none}table.data-table th.sortable:hover{background:#e4edf5}table.data-table th.active{color:var(--blue)}table.data-table td{font-size:13px;padding:12px 11px;border-bottom:1px solid #edf1f5;vertical-align:middle}table.data-table tbody tr:last-child td{border-bottom:0}table.data-table tbody tr:hover{background:#f9fbfd}table.data-table tfoot td{background:#f6f9fc;font-weight:800;color:var(--navy);border-top:2px solid var(--line)}.num{text-align:right;font-variant-numeric:tabular-nums}.status{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap}.status.open{background:var(--amberbg);color:var(--amber)}.status.completed{background:var(--greenbg);color:var(--green)}.row-actions{display:flex;gap:6px;white-space:nowrap}.empty{padding:28px!important;text-align:center!important;color:var(--muted)}.details-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.detail{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd}.detail span{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.detail strong{font-size:14px;color:var(--navy);overflow-wrap:anywhere}.section-line{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.totals{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap;margin-top:14px}.total-box{background:#f3f7fa;border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:135px}.total-box span{font-size:11px;color:var(--muted);display:block}.total-box strong{font-size:17px;color:var(--navy);display:block;margin-top:4px}.notice{padding:11px 13px;border-radius:10px;background:#eef5fb;color:var(--navy);font-size:13px;margin:12px 0}.notice.error{background:var(--redbg);color:var(--red)}.notice.success{background:var(--greenbg);color:var(--green)}.notice.warn{background:var(--amberbg);color:var(--amber)}.shortage-preview{font-size:13px;font-weight:800;color:var(--blue);padding:10px 12px;background:var(--blue2);border-radius:9px;align-self:end;min-height:42px;display:flex;align-items:center}.emergency-btn{width:100%;background:#b3262d;color:#fff;padding:16px;border-radius:12px;font-size:14px;letter-spacing:.3px;margin-top:16px;box-shadow:0 5px 14px #b3262d26}.modal{position:fixed;inset:0;background:#0d1e30a8;display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}.modalbox{background:#fff;border-radius:18px;padding:22px;width:min(560px,100%);max-height:90vh;overflow:auto;box-shadow:0 20px 60px #0003}.modalbox h2{margin:0 0 6px;color:var(--navy)}.modalbox .field{margin-top:12px}.modal-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}.login-shell{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#edf3f8,#e8eef4)}.login-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;width:min(420px,100%);box-shadow:0 18px 60px #14283f18}.login-card .brand{margin-bottom:22px}.login-card h1{color:var(--navy);font-size:23px;margin:0 0 7px}.login-card p{color:var(--muted);font-size:13px;margin:0 0 18px}.login-card .field{margin:13px 0}.login-card button{width:100%;margin-top:10px}.pill-count{font-size:11px;background:#edf3f8;color:#42576b;padding:5px 9px;border-radius:20px;font-weight:700;white-space:nowrap}.alert-item{border:1px solid #f1d1d1;border-left:4px solid var(--red);padding:13px;border-radius:11px;margin:9px 0;background:#fffafa}.alert-item strong{color:#8e2020}.alert-actions{display:flex;gap:8px;margin-top:9px;flex-wrap:wrap}.recording{color:var(--red);font-size:12px;font-weight:700}.subtle{font-size:12px;color:var(--muted)}.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:700;z-index:99;box-shadow:0 10px 30px #0004;animation:toast-in .2s ease;max-width:90vw;text-align:center}.toast.error{background:var(--red)}.toast.success{background:var(--green)}.toast-out{opacity:0;transition:opacity .3s}@keyframes toast-in{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}.recent-list{display:flex;flex-direction:column;gap:8px;margin-top:10px;max-height:220px;overflow:auto;border:1px dashed var(--line);border-radius:10px;padding:10px}.recent-item{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#f7fafd;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:12px}.recent-item button{font-size:12px;padding:7px 10px;white-space:nowrap}.datalist-hint{font-size:11px;color:var(--muted);margin-top:4px}
+@media(max-width:760px){.page{padding:12px}.topbar{padding:12px 14px}.brandline{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.stat-number{font-size:24px}.page-title{flex-direction:column}.page-title h1{font-size:22px}.field-grid,.field-grid.three,.field-grid.four{grid-template-columns:1fr 1fr}.details-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:14px}.toolbar>*{flex:1 1 140px}.user-badge{max-width:125px}.total-box{flex:1;min-width:105px}}
+@media(max-width:430px){.field-grid,.field-grid.three,.field-grid.four{grid-template-columns:1fr}.details-grid{grid-template-columns:1fr 1fr}.topbar{gap:7px}.user-tools{gap:5px}.user-badge{font-size:10px;padding:7px}.topbar button{font-size:11px;padding:8px}.actions button{flex:1}.panel-head{align-items:flex-start}}
+
+/* Fast entry and clear action feedback */
+.spinner{display:inline-block;width:15px;height:15px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:-3px;margin-right:6px;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.notice.error{font-size:16px;font-weight:800;border:2px solid #bd3030;line-height:1.45}
+#errorModal{z-index:110}#errorModal .modalbox{border:3px solid #bd3030}#errorModal h2{color:#a51e25;font-size:23px}#errorModalText{font-size:17px;line-height:1.5;font-weight:700;white-space:pre-wrap;overflow-wrap:anywhere}
+#bundleEntryPanel .form-actions button{min-height:48px}#bundleEntryPanel .field input{font-size:16px}
+@media(max-width:760px){#workspaceView .page-title{margin:4px 0 8px;gap:6px}#workspaceView .page-title h1{font-size:19px}#workspaceView .actions{width:100%}#workspaceView .actions button{min-width:0;padding:8px 6px;font-size:11px}#bundleEntryPanel{margin:8px 0;padding:12px}#bundleEntryPanel .panel-head{margin-bottom:8px}#bundleEntryPanel .field-grid.four{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#bundleEntryPanel .field{gap:4px}#bundleEntryPanel .field input{min-height:42px;padding:9px 8px}#bundleEntryPanel .form-actions{margin-top:10px}#bundleEntryPanel .form-actions button{width:100%}#bundleEntryPanel .subtle{font-size:11px}#workspaceView .emergency-btn{margin-top:8px;padding:11px}}
+
+/* Saved bundles stay a real table on phones; entry remains a scrollable register. */
+#savedBundleTable{min-width:850px}
+.bundle-mobile-label{display:none}
+.draft-table{border-collapse:collapse;table-layout:fixed;width:100%;min-width:800px;background:white}
+.draft-table th,.draft-table td{border:1px solid #d9e2ea;padding:4px;vertical-align:middle;font-size:12px}
+.draft-table th{background:#f0f4f8;text-align:left;color:#48596a}
+.draft-table th:nth-child(1){width:38px}.draft-table th:nth-child(2){width:115px}.draft-table th:nth-child(3){width:145px}
+.draft-table th:nth-child(4),.draft-table th:nth-child(5){width:95px}.draft-table th:nth-child(6){width:75px}.draft-table th:nth-child(8){width:45px}
+.draft-table input{width:100%;min-width:0;border:1px solid #ccd7e2;border-radius:6px;padding:8px 5px;font-size:16px}
+.draft-table button{padding:8px;min-width:34px}.draft-wrap{overflow-x:auto}
+@media(max-width:760px){
+  #savedBundleWrap{overflow-x:auto}
+  #savedBundleTable{width:100%;min-width:0;table-layout:fixed}
+  #savedBundleTable th,#savedBundleTable td{font-size:10px;padding:6px 3px;white-space:normal;overflow-wrap:anywhere;word-break:break-word;vertical-align:top}
+  #savedBundleTable th:nth-child(1){width:5%}#savedBundleTable th:nth-child(2){width:11%}#savedBundleTable th:nth-child(3){width:16%}
+  #savedBundleTable th:nth-child(4),#savedBundleTable th:nth-child(5),#savedBundleTable th:nth-child(6){width:11%}
+  #savedBundleTable th:nth-child(7){width:13%}#savedBundleTable th:nth-child(8){width:17%}
+  #savedBundleTable .row-actions{display:flex;flex-direction:column;gap:4px;white-space:normal}
+  #savedBundleTable .row-actions button{font-size:9px;padding:6px 2px;min-height:34px;max-width:100%}
+  #savedBundleTable tfoot{display:none}
+  #workspaceView .totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  #workspaceView .total-box{min-width:0;padding:8px}#workspaceView .total-box strong{font-size:14px;overflow-wrap:anywhere}
+  #bundleEntryPanel .form-actions button{width:auto;flex:1;min-width:120px}
+}
+</style>
+</head>
+<body>
+
+<!-- Setup / configuration overlay -->
+<div id="setupOverlay" class="modal hidden">
+  <div class="modalbox">
+    <h2>⚙️ Application Setup Required</h2>
+    <p class="subtle">The database connection is not configured yet. This is a one-time setup performed by the administrator.</p>
+    <div class="notice" id="setupMsg">Open the Apps Script editor for this project, run the <b>setupDatabase</b> function, then redeploy the web app.</div>
+    <div class="modal-actions"><button class="btn-primary" onclick="retrySetup()">RETRY CHECK</button></div>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div id="loginView" class="login-shell">
+  <div class="login-card">
+    <div class="brand"><div class="brandmark">KT</div><div><div class="brandname">KAMLESH TEXTILES</div><div class="brandline">DIGITAL CHALLAN REGISTER · V2.2.4</div></div></div>
+    <h1>Employee Login</h1><p>Choose your name and enter your personal PIN to continue.</p>
+    <div class="field"><label>Employee name</label><select id="userSelect"><option value="">Loading employees…</option></select></div>
+    <div class="field"><label>PIN</label><input id="pin" type="password" inputmode="numeric" maxlength="12" autocomplete="current-password" placeholder="Enter your PIN" onkeydown="if(event.key==='Enter')login()"></div>
+    <div id="loginMsg" class="notice hidden"></div>
+    <button class="btn-primary" id="loginBtn" onclick="login()">SIGN IN</button>
+    <button class="btn-light" id="refreshUsersBtn" onclick="loadUsers(true)">↻ Refresh employee list</button>
+    <div class="subtle" style="text-align:center;margin-top:16px">Need access or PIN help? Contact your administrator.</div>
+    <div id="loginStatus" class="subtle" style="text-align:center;margin-top:10px">Checking app status…</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appView" class="hidden">
+  <header class="topbar">
+    <div class="brand"><div class="brandmark">KT</div><div><div class="brandname">KAMLESH TEXTILES</div><div class="brandline">DIGITAL CHALLAN REGISTER · V2.2.4</div></div></div>
+    <div class="user-tools"><span id="userBadge" class="user-badge"></span><span class="pill-count" id="appVersion">v2.2.4</span><button onclick="logout()">LOG OUT</button></div>
+  </header>
+  <main class="page">
+
+    <!-- DASHBOARD -->
+    <section id="dashboardView">
+      <div class="page-title"><div><h1 id="dashTitle">Dashboard</h1><p id="dashSubtitle"></p></div><div class="actions"><button class="btn-primary" onclick="showCreate()">＋ ADD CHALLAN</button><button class="btn-dark" onclick="openBundleLookup()">＋ ADD BUNDLE</button></div></div>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">TOTAL CHALLANS</div><div class="stat-number" id="statTotal">0</div></div>
+        <div class="stat"><div class="stat-label">CHALLANS TODAY</div><div class="stat-number" id="statTodayChallans">0</div></div>
+        <div class="stat"><div class="stat-label">BUNDLES CHECKED TODAY</div><div class="stat-number" id="statTodayBundles">0</div></div>
+        <div class="stat"><div class="stat-label">OPEN / COMPLETED</div><div class="stat-number" id="statOpenCompleted">0 / 0</div></div>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><div><h2>Challan Register</h2></div><span class="pill-count" id="registerCount">0 records</span></div>
+        <div class="toolbar" style="margin-bottom:13px">
+          <input id="searchBox" placeholder="Search challan no., supplier, date…" oninput="debouncedRefresh()" style="flex:2;min-width:190px">
+          <select id="statusFilter" onchange="refreshTable()" style="max-width:180px"><option value="ALL">All statuses</option><option value="OPEN">Open</option><option value="COMPLETED">Completed</option></select>
+          <button class="btn-light" id="refreshBtn" onclick="refreshDashboard(true)">↻ Refresh</button>
+        </div>
+        <div class="toolbar hidden" id="adminFilterRow" style="margin-bottom:13px">
+          <select id="filterEmployee" onchange="refreshTable()" style="max-width:180px"><option value="">All employees</option></select>
+          <input id="filterSupplier" placeholder="Filter supplier" oninput="debouncedRefresh()" style="min-width:150px">
+          <input id="filterFrom" type="date" title="From entry date" onchange="refreshTable()" style="max-width:160px">
+          <input id="filterTo" type="date" title="To entry date" onchange="refreshTable()" style="max-width:160px">
+          <button class="btn-light btn-small" onclick="clearAdminFilters()">CLEAR FILTERS</button>
+        </div>
+        <div class="table-wrap"><table class="data-table"><thead id="registerHead"></thead><tbody id="challanRows"><tr><td colspan="9" class="empty">Loading challans…</td></tr></tbody></table></div>
+      </section>
+      <section id="adminAlertsPanel" class="panel hidden">
+        <div class="panel-head"><div><h2>Emergency Alerts</h2></div><button class="btn-light btn-small" id="refreshAlertsBtn" onclick="loadAlerts(true)">↻ Refresh alerts</button></div>
+        <div id="alertsList" class="muted">Loading alerts…</div>
+      </section>
+      <div class="subtle" style="text-align:center;margin:18px 0 6px">Kamlesh Textiles · Digital Challan Register · Version 2.2.4</div>
+    </section>
+
+    <!-- CREATE CHALLAN -->
+    <section id="createView" class="hidden">
+      <div class="page-title"><div><h1>New Challan</h1></div><button class="btn-light" onclick="showDashboard()">← BACK TO DASHBOARD</button></div>
+      <div class="panel">
+        <div class="panel-head"><h2>Challan Details</h2></div>
+        <div class="field-grid three">
+          <div class="field"><label>Supplier name *</label><input id="newSupplier" autocomplete="off" placeholder="Enter supplier name"></div>
+          <div class="field"><label>Challan number *</label><input id="newChallanNo" autocomplete="off" placeholder="Enter challan number"></div>
+          <div class="field"><label>Challan date *</label><input id="newChallanDate" type="date"></div>
+          <div class="field"><label>Width</label><input id="newWidth" autocomplete="off" placeholder="e.g. 58 inch"></div>
+          <div class="field"><label>Dyeing lot</label><input id="newDyeingLot" autocomplete="off" placeholder="Enter dyeing lot"></div>
+        </div>
+        <div id="createMsg" class="notice hidden"></div>
+        <div class="form-actions"><button class="btn-light" onclick="showDashboard()">CANCEL</button><button class="btn-primary" id="createBtn" onclick="createChallan()">CREATE CHALLAN &amp; OPEN WORKSPACE →</button></div>
+      </div>
+    </section>
+
+    <!-- CHALLAN WORKSPACE -->
+    <section id="workspaceView" class="hidden">
+      <div class="page-title"><div><div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap"><h1 id="workspaceTitle">Challan Workspace</h1><span id="workspaceStatus" class="status open">OPEN</span></div><p id="workspaceSub"></p></div><div class="actions"><button class="btn-light" onclick="showDashboard()">← REGISTER</button><button class="btn-outline" onclick="printChallan()">⎙ PRINT</button><button class="btn-outline" onclick="printChallan()">⎙ REPRINT</button></div></div>
+      <section class="panel hidden" id="challanDetailsPanel">
+        <div class="panel-head"><div><h2>Challan Details</h2></div><button id="editDetailsBtn" class="btn-light btn-small" onclick="openChallanEdit()">EDIT DETAILS</button></div>
+        <div class="details-grid" id="challanDetails"></div>
+      </section>
+      <section class="panel" id="bundleEntryPanel">
+        <div class="panel-head"><div><h2>Enter bundles</h2><div class="subtle">Complete every entered row before saving.</div></div><span class="pill-count">NEXT #<span id="nextBundleNo">1</span></span></div>
+        <div class="table-wrap draft-wrap"><table class="draft-table"><thead><tr><th>No.</th><th>Series *</th><th>Design / Colour *</th><th>Supplier m *</th><th>Our m *</th><th>Shortage</th><th>Report / Cutting</th><th></th></tr></thead><tbody id="draftRows"></tbody></table></div>
+        <div class="subtle" id="draftStorageStatus" role="status"></div>
+        <div id="bundleMsg" class="notice hidden"></div>
+        <div class="form-actions"><button class="btn-light" id="addDraftRowBtn" onclick="addDraftRow()">+ ADD ROW</button><button class="btn-light hidden" id="unlockDraftBtn" onclick="unlockDraft()">UNLOCK DRAFT</button><button class="btn-primary" id="addBundleBtn" onclick="addBundle()">SAVE ALL BUNDLES</button></div>
+      </section>
+      <button id="emergencyButton" class="emergency-btn" onclick="openEmergency()">🚨 EMERGENCY / GET HELP</button>
+      <section class="panel">
+        <div class="panel-head"><div><h2>Saved Bundles</h2></div><span class="pill-count" id="bundleCount">0 bundles</span></div>
+        <div class="table-wrap" id="savedBundleWrap"><table class="data-table" id="savedBundleTable"><thead><tr><th>No.</th><th>Series</th><th>Design No. / Col. No.</th><th class="num">Supplier Mtr.</th><th class="num">Our Mtr.</th><th class="num">Shortage</th><th>Report / Cutting</th><th>Actions</th></tr></thead><tbody id="bundleRows"><tr><td colspan="8" class="empty">No bundles added yet.</td></tr></tbody><tfoot id="bundleTotals"></tfoot></table></div>
+        <div class="totals"><div class="total-box"><span>Supplier total</span><strong id="totalSupplier">0.00 m</strong></div><div class="total-box"><span>Our total</span><strong id="totalOur">0.00 m</strong></div><div class="total-box"><span>Total shortage</span><strong id="totalShortage">0.00 m</strong></div></div>
+      </section>
+      <section class="panel">
+        <div class="section-line"><div><h3>Challan Status</h3></div><div id="statusActionArea"></div></div>
+        <div id="statusMsg" class="notice hidden"></div>
+      </section>
+    </section>
+
+  </main>
+</div>
+
+<datalist id="seriesList"></datalist>
+<datalist id="dnoList"></datalist>
+
+<!-- Bundle lookup modal -->
+<div id="bundleLookupModal" class="modal hidden"><div class="modalbox"><h2>Add Bundle to a Challan</h2><div class="field"><label>Challan number *</label><input id="lookupChallanNo" placeholder="Enter challan number" onkeydown="if(event.key==='Enter')goToBundleChallan()"></div><div id="lookupMsg" class="notice hidden"></div><div class="recent-list" id="recentChallans"><div class="subtle">Loading your recent open challans…</div></div><div class="modal-actions"><button class="btn-light" onclick="closeModal('bundleLookupModal')">CANCEL</button><button class="btn-primary" id="lookupBtn" onclick="goToBundleChallan()">GO TO CHALLAN →</button></div></div></div>
+
+<!-- Bundle edit modal -->
+<div id="bundleEditModal" class="modal hidden"><div class="modalbox"><h2>Edit Bundle</h2><input id="editBundleId" type="hidden"><div class="field-grid"><div class="field"><label>Series *</label><input id="editSeries"></div><div class="field"><label>Design No. / Col. No. *</label><input id="editDno"></div><div class="field"><label>Supplier metres *</label><input id="editSupplier" type="number" min="0" step="0.01"></div><div class="field"><label>Our metres *</label><input id="editOur" type="number" min="0" step="0.01"></div><div class="field"><label>Report / Cutting</label><input id="editReport"></div></div><div id="editBundleMsg" class="notice hidden"></div><div class="modal-actions"><button class="btn-light" onclick="closeModal('bundleEditModal')">CANCEL</button><button class="btn-primary" id="editBundleSaveBtn" onclick="saveBundleEdit()">SAVE CHANGES</button></div></div></div>
+
+<!-- Challan details edit modal -->
+<div id="challanEditModal" class="modal hidden"><div class="modalbox"><h2>Edit Challan Details</h2><div class="field-grid"><div class="field"><label>Supplier name *</label><input id="editChallanSupplier"></div><div class="field"><label>Challan number *</label><input id="editChallanNo"></div><div class="field"><label>Challan date *</label><input id="editChallanDate" type="date"></div><div class="field"><label>Width</label><input id="editChallanWidth"></div><div class="field"><label>Dyeing lot</label><input id="editChallanLot"></div></div><div id="editChallanMsg" class="notice hidden"></div><div class="modal-actions"><button class="btn-light" onclick="closeModal('challanEditModal')">CANCEL</button><button class="btn-primary" id="editChallanSaveBtn" onclick="saveChallanEdit()">SAVE DETAILS</button></div></div></div>
+
+<div id="errorModal" class="modal hidden" role="alertdialog" aria-modal="true" aria-labelledby="errorModalTitle"><div class="modalbox"><h2 id="errorModalTitle">⚠ ERROR</h2><p id="errorModalText"></p><button class="btn-danger" onclick="closeError()">OK, I UNDERSTAND</button></div></div>
+
+<!-- Emergency modal -->
+<div id="emergencyModal" class="modal hidden"><div class="modalbox"><h2>🚨 Report a Problem</h2><p class="subtle">Submitting also saves the current bundle if its required fields are complete.</p><div class="field"><label>Problem category *</label><select id="emergencyCategory"><option value="">Choose problem</option><option>Damage</option><option>Shortage</option><option>Mismatch</option><option>Machine/Work problem</option><option>Other</option></select></div><div class="field"><label>Type a note (optional)</label><textarea id="emergencyDetails" rows="3" placeholder="Describe the issue"></textarea></div><div class="field"><label>Voice note (optional)</label><div class="toolbar"><button type="button" class="btn-primary" id="voiceExternalButton" onclick="openExternalRecorder()">🎙 RECORD VOICE</button><button type="button" class="btn-light" id="voiceNativeButton" onclick="openVoicePicker('voiceCaptureInput')">PHONE RECORDER</button><button type="button" class="btn-outline" id="voiceUploadButton" onclick="openVoicePicker('voiceFileInput')">📎 ATTACH AUDIO</button><button type="button" class="btn-light" id="recordButton" onclick="toggleRecording()">RECORD IN BROWSER</button><button type="button" class="btn-light hidden" id="clearVoiceButton" onclick="clearVoice()">REMOVE VOICE</button><span id="recordingLabel" class="recording"></span></div><input type="file" id="voiceCaptureInput" accept="audio/*" capture style="display:none" onchange="handleVoiceFile(this)"><input type="file" id="voiceFileInput" accept="audio/*,.mp3,.m4a,.aac,.wav,.ogg,.opus,.webm,.3gp,.3g2,.amr,.flac" style="display:none" onchange="handleVoiceFile(this)"><audio id="voicePreview" class="hidden" controls style="width:100%;margin-top:8px"></audio><div class="subtle">Record Voice opens a secure recorder in a new tab, then returns the recording here. Maximum 2.5 MB.</div></div><div class="subtle" id="emergencyContext"></div><div id="emergencyMsg" class="notice hidden"></div><div class="modal-actions"><button class="btn-light" id="cancelEmergencyBtn" onclick="closeEmergency()">CANCEL</button><button class="btn-danger" id="sendEmergencyBtn" onclick="sendEmergency()">SEND ALERT TO ADMIN</button></div></div></div>
+
+<script>
+'use strict';
+const APP_VERSION = '2.2.4';
+const TOKEN_KEY = 'kt_session_token';
+const USER_KEY = 'kt_session_user';
+
+let sessionToken = '';
+try { sessionToken = localStorage.getItem(TOKEN_KEY) || ''; } catch (e) {}
+let currentUser = null;
+try { currentUser = JSON.parse(localStorage.getItem(USER_KEY) || 'null'); } catch (e) { currentUser = null; }
+let currentChallanId = '';
+let currentData = null;
+let lastSeries = '', lastDno = '';
+let employeeNames = {};
+let mediaRecorder = null, recordedChunks = [], voiceData = '', voiceMime = '', voicePreviewUrl = '', recordTimer = null, voiceProcessing = false, voiceGeneration = 0, emergencyBundleAttempt = null;
+let sortState = { key: 'entryDate', dir: -1 };
+let refreshTimer = null, bundleSuccessTimer = null;
+let draftRows = [], draftPending = false, draftSaving = false, draftRequestSeq = 0, draftStorageOK = true, recorderUrl = '';
+let recorderWindow = null, recorderNonce = '', recorderOrigin = '';
+// Changes whenever the signed-in identity changes; late RPC responses are ignored.
+let sessionEpoch = 0, dashboardRequest = 0, tableRequest = 0, alertsRequest = 0, workspaceRequest = 0;
+const $ = id => document.getElementById(id);
+
+/* The same Index.html can be published as a public static recording helper.
+   It receives no challan, session token, employee, or bot credentials. */
+function runExternalRecorderPage() {
+  document.body.innerHTML = `<main style="max-width:440px;margin:30px auto;padding:20px;font-family:Arial,sans-serif"><h2>Record voice note</h2><p id="recStatus">Opening microphone…</p><button id="recStart" class="btn-primary" style="display:none">START RECORDING</button> <button id="recStop" class="btn-danger" disabled>STOP & RETURN</button><p class="subtle">Maximum 60 seconds. Your recording is returned to the challan app.</p></main>`;
+  const params=new URLSearchParams(window.location.hash.slice(1)), origin=params.get('origin'), nonce=params.get('nonce');
+  const status=document.getElementById('recStatus'), start=document.getElementById('recStart'), stop=document.getElementById('recStop');
+  let recorder=null, stream=null, chunks=[], timer=null, timeout=null, started=false;
+  function cleanup() { clearTimeout(timer); if(stream) stream.getTracks().forEach(t=>t.stop()); stream=null; }
+  try { const u=new URL(origin); if(u.protocol!=='https:' || u.origin!==origin || !/^[a-f0-9]{32}$/.test(nonce||'') || !window.opener) throw new Error('no opener'); }
+  catch(e) { status.textContent='Open this recorder from the challan app. If it was opened correctly, allow pop-ups and try again.'; return; }
+  window.addEventListener('message',e=>{ if(e.origin===origin && e.source===window.opener && e.data && e.data.type==='KT_VOICE_ACK' && e.data.nonce===nonce) { clearTimeout(timeout); status.textContent='Recording attached. Returning to challan…'; window.close(); } });
+  async function begin() {
+    if(started)return; started=true; start.disabled=true;
+    try {
+      stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      recorder=new MediaRecorder(stream); chunks=[];
+      recorder.ondataavailable=e=>{if(e.data && e.data.size) chunks.push(e.data);};
+      recorder.onerror=()=>{cleanup();status.textContent='Recording failed. Return to the app and try again.';stop.disabled=true;};
+      recorder.onstop=()=>{
+        cleanup(); stop.disabled=true;
+        const type=(recorder.mimeType||'audio/webm').split(';')[0];
+        const blob=new Blob(chunks,{type:type});
+        if(!blob.size || blob.size>2500000 || !/^audio\/(webm|ogg|mp4)$/.test(type)) { status.textContent='Recording is empty, too large, or unsupported. Return and try a shorter note.'; return; }
+        const reader=new FileReader();
+        reader.onloadend=()=>{
+          if(reader.error || !reader.result || !window.opener) { status.textContent='Could not return the recording. Return to the challan and try again.';return; }
+          status.textContent='Returning recording to challan…';
+          window.opener.postMessage({type:'KT_VOICE_READY',nonce:nonce,audio:reader.result},origin);
+          timeout=setTimeout(()=>{status.textContent='The challan did not confirm the recording. Return to it and try again.';},10000);
+        };
+        reader.readAsDataURL(blob);
+      };
+      recorder.start(); status.textContent='Recording… tap STOP & RETURN when finished.'; start.style.display='none'; stop.disabled=false;
+      timer=setTimeout(()=>{if(recorder && recorder.state==='recording')recorder.stop();},60000);
+    } catch(e) { cleanup(); started=false; start.disabled=false; start.style.display='inline-block'; status.textContent='Could not start microphone. Allow access for this recording page, then tap Start.'; }
+  }
+  start.onclick=begin; stop.onclick=()=>{if(recorder && recorder.state==='recording') {stop.disabled=true;recorder.stop();}};
+  window.addEventListener('pagehide',cleanup);
+  begin();
+}
+
+/* ---------- guard for file:// preview ---------- */
+if (new URLSearchParams(window.location.search).get('recorder') === '1' && (typeof google === 'undefined' || !google.script || !google.script.run)) {
+  runExternalRecorderPage();
+} else if (typeof google === 'undefined' || !google.script || !google.script.run) {
+  document.body.innerHTML = '<div style="padding:48px 24px;text-align:center;font-family:Arial,sans-serif;color:#14283f"><h2>Preview mode</h2><p>Open this application through its deployed Google Apps Script web app URL to use it.</p></div>';
+} else {
+  /* ---------- diagnostics: catch any JS error so the button can never fail silently ---------- */
+  window.addEventListener('error', function (e) {
+    const m = (e && e.message) ? e.message : String(e);
+    const el = document.getElementById('loginStatus');
+    if (el) { el.textContent = '⚠ JavaScript error: ' + m + ' — refresh the page or ask the admin to re-save Index.html.'; el.style.color = '#bd3030'; }
+    try { showErrorPopup('Unexpected page error: ' + m + '. Check whether your last action was saved before retrying.'); } catch (ignored) {}
+  });
+  function setLoginStatus(text, color) {
+    const el = $('loginStatus');
+    if (el) { el.textContent = text; el.style.color = color || ''; }
+  }
+
+  /* ---------- core helpers ---------- */
+  function call(fn, args, ok, fail) {
+    const requestEpoch = sessionEpoch, requestToken = sessionToken;
+    const active = () => requestEpoch === sessionEpoch && requestToken === sessionToken;
+    try {
+      google.script.run
+        .withSuccessHandler(function (result) { if (active() && ok) ok(result); })
+        .withFailureHandler(function (e) {
+          if (!active()) return;
+          const m = (e && e.message) ? e.message : String(e);
+          handleError(m, fail);
+        })
+        [fn](...args);
+    } catch (e) { if (active()) handleError((e && e.message) ? e.message : String(e), fail); }
+  }
+  function handleError(m, fail) {
+    if (fail) { fail(m); return; }
+    const low = m.toLowerCase();
+    if (low.indexOf('database_not_setup') >= 0) { showSetupOverlay(); return; }
+    if (low.indexOf('session expired') >= 0 || low.indexOf('account is inactive') >= 0) {
+      clearSession(); showLogin(); toast(m, 'error'); return;
+    }
+    toast(m, 'error');
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function fmt(n) { return (Number(n) || 0).toFixed(2); }
+  function fmtDT(v) { if (!v) return '—'; const d = new Date(v); if (isNaN(d.getTime())) return String(v); return d.toLocaleString('en-GB', {day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit'}); }
+  function showErrorPopup(text) {
+    $('errorModalText').textContent = String(text || 'Something went wrong.');
+    $('errorModal').classList.remove('hidden');
+  }
+  function closeError() { $('errorModal').classList.add('hidden'); }
+  function setBusyElement(b, busy, label) {
+    if (!b) return;
+    if (busy) { if (b.disabled) return; b._idleHtml = b.innerHTML; b.disabled = true; b.setAttribute('aria-busy','true'); b.innerHTML = '<span class="spinner" aria-hidden="true"></span>' + esc(label || 'Please wait…'); }
+    else { b.disabled = false; b.removeAttribute('aria-busy'); if (b._idleHtml !== undefined) b.innerHTML = b._idleHtml; }
+  }
+  function setBusy(id, busy, label) { setBusyElement($(id), busy, label); }
+  function showMsg(id, text, type) { $(id).textContent = text; $(id).className = 'notice ' + (type || ''); $(id).classList.remove('hidden'); if (type === 'error') showErrorPopup(text); }
+  function hideMsg(id) { $(id).classList.add('hidden'); }
+  function toast(msg, type) {
+    if (type === 'error') { showErrorPopup(msg); return; }
+    const el = document.createElement('div');
+    el.className = 'toast ' + (type || 'info');
+    el.textContent = msg;
+    document.body.appendChild(el);
+    setTimeout(() => { el.classList.add('toast-out'); setTimeout(() => el.remove(), 300); }, 4200);
+  }
+  function localToday() { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); }
+  function debouncedRefresh() { tableRequest++; clearTimeout(refreshTimer); refreshTimer = setTimeout(refreshTable, 350); }
+
+  /* ---------- setup overlay ---------- */
+  function showSetupOverlay() { $('setupOverlay').classList.remove('hidden'); }
+  function retrySetup() {
+    call('apiGetAppInfo', [], info => {
+      if (info.configured) { $('setupOverlay').classList.add('hidden'); loadUsers(); }
+      else { showMsg('setupMsg', 'Still not configured. Open the Apps Script editor, run setupDatabase(), save and redeploy the web app.', 'error'); }
+    });
+  }
+
+  /* ---------- session / login ---------- */
+  function resetAccountView() {
+    clearTimeout(refreshTimer); clearTimeout(bundleSuccessTimer);
+    dashboardRequest++; tableRequest++; alertsRequest++; workspaceRequest++;
+    currentChallanId = ''; currentData = null; lastSeries = ''; lastDno = ''; emergencyBundleAttempt = null; draftRows = []; draftPending = false; draftSaving = false; draftRequestSeq++;
+    sortState = { key: 'entryDate', dir: -1 };
+    ['statTotal','statTodayChallans','statTodayBundles','statOpenCompleted'].forEach(id => { $(id).textContent = '—'; });
+    $('registerCount').textContent = 'Loading…';
+    $('registerHead').innerHTML = '';
+    $('challanRows').innerHTML = '<tr><td colspan="9" class="empty">Loading challans…</td></tr>';
+    $('alertsList').textContent = 'Loading alerts…';
+    $('filterEmployee').innerHTML = '<option value="">All employees</option>';
+    ['searchBox','filterEmployee','filterSupplier','filterFrom','filterTo','pin',
+      'lookupChallanNo','newSupplier','newChallanNo','newWidth','newDyeingLot',
+      'editBundleId','editSeries','editDno','editSupplier','editOur','editReport',
+      'editChallanSupplier','editChallanNo','editChallanDate','editChallanWidth','editChallanLot',
+      'emergencyCategory','emergencyDetails'].forEach(id => { $(id).value = ''; });
+    $('statusFilter').value = 'ALL';
+    ['challanDetails','bundleRows','bundleTotals','draftRows','statusActionArea','seriesList','dnoList','recentChallans'].forEach(id => { $(id).innerHTML = ''; });
+    ['userBadge','workspaceTitle','workspaceSub','workspaceStatus','emergencyContext','errorModalText',
+      'bundleCount','nextBundleNo','totalSupplier','totalOur','totalShortage','draftStorageStatus'].forEach(id => { $(id).textContent = ''; });
+    ['bundleLookupModal','bundleEditModal','challanEditModal','emergencyModal','setupOverlay','errorModal',
+      'adminAlertsPanel','adminFilterRow','challanDetailsPanel'].forEach(id => { $(id).classList.add('hidden'); });
+    ['loginMsg','createMsg','bundleMsg','statusMsg','lookupMsg','editBundleMsg','editChallanMsg','emergencyMsg'].forEach(hideMsg);
+    ['loginBtn','refreshUsersBtn','refreshBtn','refreshAlertsBtn','createBtn','lookupBtn',
+      'addBundleBtn','editBundleSaveBtn','editChallanSaveBtn','sendEmergencyBtn'].forEach(id => setBusy(id, false));
+    clearVoice();
+    if (typeof document.querySelectorAll === 'function') document.querySelectorAll('.toast').forEach(node => node.remove());
+  }
+  function clearSession(preserveStoredSession) {
+    const oldToken = sessionToken;
+    sessionEpoch++; sessionToken = ''; currentUser = null;
+    resetAccountView();
+    // Do not erase a newer account that was signed in by another tab.
+    if (!preserveStoredSession) {
+      try { if (!localStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY) === oldToken) { localStorage.removeItem(TOKEN_KEY); localStorage.removeItem(USER_KEY); } } catch (e) {}
+    }
+  }
+  function showLogin() {
+    $('appView').classList.add('hidden');
+    $('loginView').classList.remove('hidden');
+    hideMsg('loginMsg');
+    loadUsers();
+  }
+  function enterApp() {
+    // Clear any previously rendered identity's data before showing the app.
+    resetAccountView();
+    $('loginView').classList.add('hidden');
+    $('appView').classList.remove('hidden');
+    $('appVersion').textContent = 'v' + APP_VERSION;
+    $('userBadge').textContent = (currentUser.role === 'ADMIN' ? 'Admin · ' : 'Employee · ') + currentUser.name;
+    $('dashTitle').textContent = currentUser.role === 'ADMIN' ? 'Admin Dashboard' : 'Employee Dashboard';
+    $('dashSubtitle').textContent = '';
+    $('adminAlertsPanel').classList.toggle('hidden', currentUser.role !== 'ADMIN');
+    $('adminFilterRow').classList.toggle('hidden', currentUser.role !== 'ADMIN');
+    if (currentUser.role === 'ADMIN') loadEmployeeFilter();
+    call('apiGetAppInfo', [], info => { recorderUrl = info.recorderUrl || ''; }, () => { recorderUrl = ''; });
+    showDashboard();
+  }
+  function loadUsers(manual) {
+    if (manual) { if ($('refreshUsersBtn').disabled) return; setBusy('refreshUsersBtn', true, 'Refreshing…'); }
+    setLoginStatus('Loading employee list…', '');
+    call('apiGetActiveUsers', [], users => {
+      if (manual) setBusy('refreshUsersBtn', false);
+      employeeNames = {};
+      users.forEach(u => { employeeNames[u.id] = u.name; });
+      const s = $('userSelect');
+      s.innerHTML = '<option value="">Select your name</option>' + users.map(u => `<option value="${esc(u.id)}">${esc(u.name)}${u.role === 'ADMIN' ? ' (Admin)' : ''}</option>`).join('');
+      setLoginStatus(users.length ? '' : 'No active users with a saved PIN found. Contact your administrator.', users.length ? '' : '#bd3030');
+    }, m => { if (manual) setBusy('refreshUsersBtn', false); showMsg('loginMsg', m, 'error'); setLoginStatus('Employee list failed: ' + m, '#bd3030'); });
+  }
+  function login() {
+    if ($('loginBtn').disabled) return;
+    hideMsg('loginMsg');
+    const id = $('userSelect').value, pin = $('pin').value;
+    if (!id || !pin) { showMsg('loginMsg', 'Choose your name and enter your PIN.', 'error'); return; }
+    setBusy('loginBtn', true, 'Signing in…');
+    showMsg('loginMsg', 'Signing in…', 'warn');
+    call('apiLogin', [id, pin], r => {
+      setBusy('loginBtn', false);
+      sessionEpoch++; sessionToken = r.token; currentUser = r.user;
+      try { localStorage.setItem(TOKEN_KEY, sessionToken); localStorage.setItem(USER_KEY, JSON.stringify(currentUser)); } catch (e) {}
+      $('pin').value = '';
+      enterApp();
+      toast('Welcome, ' + r.user.name, 'success');
+    }, m => { setBusy('loginBtn', false); showMsg('loginMsg', m, 'error'); });
+  }
+  function logout() {
+    if (sessionToken) call('apiLogout', [sessionToken], () => {}, () => {});
+    clearSession(); stopRecordingQuiet(); showLogin();
+  }
+
+  /** Shows exactly whether the app is configured and connected to the master Sheet. */
+  function checkAppStatus() {
+    setLoginStatus('Checking configuration…', '');
+    call('apiGetAppInfo', [], info => {
+      if (info.configured) {
+        setLoginStatus('Backend v' + info.version + ' connected to a sheet. Reloading employee list…', '#16794b');
+        loadUsers();
+      } else {
+        setLoginStatus('NOT CONFIGURED — open the Apps Script editor, run setupDatabase(), save and redeploy the web app.', '#bd3030');
+      }
+    }, m => setLoginStatus('Status check failed: ' + m, '#bd3030'));
+  }
+
+  /* ---------- navigation ---------- */
+  function showOnly(view) { ['dashboardView','createView','workspaceView'].forEach(id => $(id).classList.add('hidden')); $(view).classList.remove('hidden'); window.scrollTo(0, 0); }
+  function showDashboard() {
+    workspaceRequest++; showOnly('dashboardView'); refreshDashboard();
+    if (currentUser && currentUser.role === 'ADMIN') loadAlerts();
+  }
+  function showCreate() {
+    workspaceRequest++; showOnly('createView');
+    ['newSupplier','newChallanNo','newWidth','newDyeingLot'].forEach(id => $(id).value = '');
+    $('newChallanDate').value = localToday();
+    hideMsg('createMsg');
+    $('newSupplier').focus();
+  }
+
+  /* ---------- dashboard ---------- */
+  function refreshDashboard(manual) {
+    if (manual) { if ($('refreshBtn').disabled) return; setBusy('refreshBtn', true, 'Refreshing…'); }
+    const request = ++dashboardRequest;
+    call('apiGetDashboard', [sessionToken], d => {
+      if (request !== dashboardRequest) { if (manual) setBusy('refreshBtn', false); return; }
+      $('statTotal').textContent = d.totalChallans;
+      $('statTodayChallans').textContent = d.todayChallans;
+      $('statTodayBundles').textContent = d.todayBundles;
+      $('statOpenCompleted').textContent = d.openChallans + ' / ' + d.completedChallans;
+      refreshTable(manual ? () => setBusy('refreshBtn', false) : null);
+      if (manual && currentUser.role === 'ADMIN') loadAlerts();
+    }, m => { if (manual) setBusy('refreshBtn', false); if (request === dashboardRequest) handleError(m); });
+  }
+  function refreshTable(done) {
+    const request = ++tableRequest, q = $('searchBox').value, st = $('statusFilter').value;
+    call('apiListChallans', [sessionToken, q, st], rows => {
+      if (request === tableRequest) applyFiltersAndRender(rows);
+      if (typeof done === 'function') done();
+    }, m => {
+      if (typeof done === 'function') done();
+      if (request !== tableRequest) return;
+      $('challanRows').innerHTML = '<tr><td colspan="9" class="empty">Could not load challans: ' + esc(m) + '</td></tr>';
+      handleError(m);
+    });
+  }
+  function applyFiltersAndRender(rows) {
+    let out = rows.slice();
+    if (currentUser.role === 'ADMIN') {
+      const emp = $('filterEmployee').value;
+      if (emp) out = out.filter(r => String(r.workerId) === emp);
+      const sup = $('filterSupplier').value.trim().toLowerCase();
+      if (sup) out = out.filter(r => (r.supplier || '').toLowerCase().includes(sup));
+      const from = $('filterFrom').value, to = $('filterTo').value;
+      if (from) out = out.filter(r => (r.entryDate || '') >= from);
+      if (to) out = out.filter(r => (r.entryDate || '') <= to);
+    }
+    renderChallans(sortRows(out));
+  }
+  function clearAdminFilters() {
+    $('filterEmployee').value = ''; $('filterSupplier').value = ''; $('filterFrom').value = ''; $('filterTo').value = '';
+    refreshTable();
+  }
+  function sortBy(key) {
+    if (sortState.key === key) sortState.dir *= -1;
+    else { sortState.key = key; sortState.dir = (key === 'entryDate') ? -1 : 1; }
+    refreshTable();
+  }
+  function sortRows(rows) {
+    const k = sortState.key, d = sortState.dir;
+    const val = r => {
+      switch (k) {
+        case 'entryDate': return r.entryDate || '';
+        case 'challanNo': return (r.challanNo || '').toLowerCase();
+        case 'supplier': return (r.supplier || '').toLowerCase();
+        case 'bundles': return Number(r.bundles || 0);
+        case 'shortage': return Number(r.shortage || 0);
+        case 'status': return r.status === 'COMPLETED' ? 1 : 0;
+        default: return 0;
+      }
+    };
+    return rows.slice().sort((a, b) => {
+      const va = val(a), vb = val(b);
+      if (va < vb) return -1 * d;
+      if (va > vb) return 1 * d;
+      return 0;
+    });
+  }
+  function renderChallans(rows) {
+    $('registerCount').textContent = rows.length + ' records';
+    const heads = [
+      ['entryDate','Entry / Challan Date'], ['challanNo','Challan No.'], ['supplier','Supplier'],
+      ...(currentUser.role === 'ADMIN' ? [['employee','Employee']] : []),
+      ['bundles','Bundles'], ['shortage','Shortage (m)'], ['status','Status'], ['actions','Actions']
+    ];
+    $('registerHead').innerHTML = heads.map(h => {
+      if (h[0] === 'actions' || h[0] === 'employee') return `<th>${esc(h[1])}</th>`;
+      const active = sortState.key === h[0];
+      const arrow = active ? (sortState.dir === 1 ? ' ▲' : ' ▼') : '';
+      return `<th class="sortable${active ? ' active' : ''}" data-key="${h[0]}" onclick="sortBy('${h[0]}')">${esc(h[1])}${arrow}</th>`;
+    }).join('');
+    $('challanRows').innerHTML = rows.length
+      ? rows.map(r => `<tr><td>${esc(r.entryDate)}<div class="subtle">Challan: ${esc(r.date)}</div></td><td><strong>${esc(r.challanNo)}</strong></td><td>${esc(r.supplier)}<div class="subtle">Width ${esc(r.width || '—')} · Lot ${esc(r.dyeingLot || '—')}</div></td>${currentUser.role === 'ADMIN' ? `<td>${esc(r.worker || '')}</td>` : ''}<td class="num">${r.bundles}</td><td class="num">${fmt(r.shortage)}</td><td><span class="status ${r.status === 'COMPLETED' ? 'completed' : 'open'}">${r.status === 'COMPLETED' ? 'COMPLETED' : 'OPEN'}</span></td><td><div class="row-actions"><button class="btn-primary btn-small" onclick="openChallan('${esc(r.id)}',this)">OPEN</button><button class="${r.status === 'COMPLETED' ? 'btn-outline' : 'btn-success'} btn-small" onclick="changeStatus('${esc(r.id)}','${r.status === 'COMPLETED' ? 'OPEN' : 'COMPLETED'}',this)">${r.status === 'COMPLETED' ? 'REOPEN' : 'MARK COMPLETE'}</button></div></td></tr>`).join('')
+      : '<tr><td colspan="9" class="empty">No challans found. Press “Add Challan” to create the first one.</td></tr>';
+  }
+  function loadEmployeeFilter() {
+    call('apiGetActiveUsers', [], users => {
+      $('filterEmployee').innerHTML = '<option value="">All employees</option>' + users.map(u => `<option value="${esc(u.id)}">${esc(u.name)}</option>`).join('');
+    });
+  }
+
+  /* ---------- challan create ---------- */
+  function createChallan() {
+    if ($('createBtn').disabled) return;
+    hideMsg('createMsg');
+    const p = { supplierName: $('newSupplier').value, challanNo: $('newChallanNo').value, challanDate: $('newChallanDate').value, width: $('newWidth').value, dyeingLot: $('newDyeingLot').value };
+    if (!p.supplierName.trim()) { showMsg('createMsg', 'Supplier name is required.', 'error'); return; }
+    if (!p.challanNo.trim()) { showMsg('createMsg', 'Challan number is required.', 'error'); return; }
+    if (!p.challanDate) { showMsg('createMsg', 'Select a challan date.', 'error'); return; }
+    setBusy('createBtn', true, 'Creating…');
+    call('apiCreateChallan', [sessionToken, p], r => {
+      setBusy('createBtn', false);
+      lastSeries = ''; lastDno = '';
+      openChallan(r.challanId);
+      toast('Challan saved. Opening workspace…', 'success');
+    }, m => { setBusy('createBtn', false); showMsg('createMsg', 'Could not confirm the challan was created: ' + m + '. Check the register or Sheet before retrying to avoid a duplicate.', 'error'); });
+  }
+
+  /* ---------- challan workspace ---------- */
+  function openChallan(id, button) {
+    if (button && button.disabled) return;
+    const request = ++workspaceRequest;
+    setBusyElement(button, true, 'Opening…');
+    call('apiGetChallan', [sessionToken, id], d => {
+      setBusyElement(button, false);
+      if (request !== workspaceRequest) return;
+      currentChallanId = id; currentData = d;
+      setBusy('addBundleBtn', false); loadDrafts();
+      lastSeries = d.bundles.length ? d.bundles[d.bundles.length - 1].series : lastSeries;
+      lastDno = d.bundles.length ? d.bundles[d.bundles.length - 1].dno : lastDno;
+      renderWorkspace();
+      showOnly('workspaceView');
+      loadRecentSeries();
+    }, m => { setBusyElement(button, false); if (request === workspaceRequest) toast(m, 'error'); });
+  }
+  function renderWorkspace() {
+    const c = currentData.challan, bs = currentData.bundles, t = currentData.totals;
+    const open = c.status === 'OPEN';
+    $('challanDetailsPanel').classList.toggle('hidden', currentUser.role !== 'ADMIN');
+    $('workspaceTitle').textContent = 'Challan ' + c.challanNo;
+    $('workspaceSub').textContent = c.supplier + ' · ' + c.date + ' · ' + (c.worker || '');
+    $('workspaceStatus').textContent = c.status;
+    $('workspaceStatus').className = 'status ' + (c.status === 'COMPLETED' ? 'completed' : 'open');
+    $('challanDetails').innerHTML = [
+      ['Supplier name', c.supplier], ['Challan number', c.challanNo], ['Challan date', c.date],
+      ['Entry date', c.entryDate], ['Width', c.width || '—'], ['Dyeing lot', c.dyeingLot || '—'],
+      ['Created by', c.worker || '—']
+    ].map(x => `<div class="detail"><span>${x[0]}</span><strong>${esc(x[1])}</strong></div>`).join('');
+    $('bundleCount').textContent = t.count + ' bundles';
+    $('nextBundleNo').textContent = t.count + 1;
+    $('totalSupplier').textContent = fmt(t.supplier) + ' m';
+    $('totalOur').textContent = fmt(t.ours) + ' m';
+    $('totalShortage').textContent = fmt(t.shortage) + ' m';
+    $('bundleTotals').innerHTML = `<tr><td>TOTALS — ${t.count} bundles</td><td colspan="2"></td><td class="num">${fmt(t.supplier)}</td><td class="num">${fmt(t.ours)}</td><td class="num">${fmt(t.shortage)}</td><td colspan="2"></td></tr>`;
+    $('bundleEntryPanel').classList.toggle('hidden', !open);
+    $('editDetailsBtn').classList.toggle('hidden', !(open || currentUser.role === 'ADMIN'));
+    $('emergencyButton').classList.remove('hidden');
+    let statusHtml;
+    if (open) {
+      statusHtml = '<button class="btn-success" onclick="changeCurrentStatus(\'COMPLETED\',this)">✓ MARK CHALLAN COMPLETE</button>';
+    } else {
+      statusHtml = '<button class="btn-outline" onclick="changeCurrentStatus(\'OPEN\',this)">↶ REOPEN CHALLAN</button>' +
+        '<div class="subtle" style="margin-top:8px">Completed on ' + esc(fmtDT(c.completedAt)) + ' by ' + esc(c.completedBy || '—') +
+        (c.reopenedAt ? ' · Reopened on ' + esc(fmtDT(c.reopenedAt)) + ' by ' + esc(c.reopenedBy || '—') : '') + '</div>';
+    }
+    $('statusActionArea').innerHTML = statusHtml;
+    // Backend returns row-number order. Reverse a copy for display only: the
+    // original order still drives next-bundle logic, emergency saves and printing.
+    $('bundleRows').innerHTML = bs.length
+      ? bs.slice().reverse().map(b => `<tr><td><span class="bundle-mobile-label bundle-number-label">Bundle #</span>${esc(b.rowNo)}</td><td><span class="bundle-mobile-label">Series</span><strong>${esc(b.series)}</strong></td><td><span class="bundle-mobile-label">Design / Colour</span>${esc(b.dno)}</td><td class="num"><span class="bundle-mobile-label">Supplier metres</span>${fmt(b.supplierMtr)}</td><td class="num"><span class="bundle-mobile-label">Our metres</span>${fmt(b.ourMtr)}</td><td class="num"><span class="bundle-mobile-label">Shortage</span>${fmt(b.shortageMtr)}</td><td><span class="bundle-mobile-label">Report / Cutting</span>${esc(b.report || '—')}</td><td>${open ? `<div class="row-actions"><button class="btn-light btn-small" onclick="openBundleEdit('${esc(b.id)}')">EDIT</button><button class="btn-danger btn-small" onclick="deleteBundle('${esc(b.id)}',this)">DELETE</button></div>` : '<span class="subtle">Read only</span>'}</td></tr>`).join('')
+      : '<tr><td colspan="8" class="empty bundle-empty">No bundles added yet. Use the Add Bundle form above.</td></tr>';
+    if (open) { hideMsg('statusMsg'); }
+    else { showMsg('statusMsg', 'This challan is completed and locked against bundle changes. Reopen it to add, edit or delete bundles.', 'success'); }
+    renderDraftTable();
+  }
+  function loadRecentSeries() {
+    const challanId = currentChallanId, request = workspaceRequest;
+    call('apiGetRecentSeries', [sessionToken, challanId], rows => {
+      if (request !== workspaceRequest || challanId !== currentChallanId) return;
+      const list = rows || [];
+      $('seriesList').innerHTML = list.map(r => '<option value="' + esc(r.series) + '">').join('');
+      $('dnoList').innerHTML = list.map(r => '<option value="' + esc(r.dno) + '">').join('');
+    }, () => {});
+  }
+
+  /* ---------- bundle entry ---------- */
+  function draftKey() { return 'kt_bundle_draft_v1:' + encodeURIComponent(currentUser.id) + ':' + encodeURIComponent(currentChallanId); }
+  function newDraft() {
+    const bytes = new Uint8Array(16); crypto.getRandomValues(bytes);
+    return {id:'BU-D'+Array.from(bytes,x=>x.toString(16).padStart(2,'0')).join(''),series:'',dno:'',supplierMtr:'',ourMtr:'',report:''};
+  }
+  function hasDraftContent(p) { return ['series','dno','supplierMtr','ourMtr','report'].some(k=>String(p[k]||'').trim() !== ''); }
+  function loadDrafts() {
+    draftRows=[]; draftPending=false; draftSaving=false; draftRequestSeq++; draftStorageOK=true;
+    try {
+      const raw=localStorage.getItem(draftKey());
+      if(raw) { const obj=JSON.parse(raw); if(!Array.isArray(obj.rows) || obj.rows.length>100) throw new Error('Invalid draft'); draftRows=obj.rows; draftPending=!!obj.pending; }
+    } catch(e) { draftStorageOK=false; }
+    if(!draftRows.length) draftRows=[newDraft()];
+  }
+  function persistDrafts() {
+    try { localStorage.setItem(draftKey(),JSON.stringify({rows:draftRows,pending:draftPending})); draftStorageOK=true; }
+    catch(e) { draftStorageOK=false; }
+    const status=$('draftStorageStatus');
+    status.textContent = draftStorageOK ? (draftPending ? 'Save not yet confirmed. Retry the unchanged rows.' : 'Draft saved on this phone only.') : 'Draft could not be saved on this phone. Do not close this page.';
+    status.style.color = draftStorageOK && !draftPending ? '' : '#b3262d';
+    return draftStorageOK;
+  }
+  function renderDraftTable() {
+    if (!currentData || !currentUser) return;
+    if (!draftRows.length) draftRows=[newDraft()];
+    const disabled = draftPending ? ' disabled' : '';
+    const fields=[['series','Series','text'],['dno','Design / Colour','text'],['supplierMtr','Supplier metres','number'],['ourMtr','Our metres','number']];
+    $('draftRows').innerHTML=draftRows.map((p,i)=>`<tr><td>${i+1}</td>${fields.map(f=>`<td><input aria-label="Row ${i+1} ${f[1]}" type="${f[2]}" ${f[2]==='number'?'inputmode="decimal" min="0" step="0.01"':(f[0]==='series'?'list="seriesList" maxlength="200"':'list="dnoList" maxlength="200"')} value="${esc(p[f[0]])}" oninput="updateDraft(${i},'${f[0]}',this.value)"${disabled}></td>`).join('')}<td id="draftShort${i}">${draftShortage(p)}</td><td><input aria-label="Row ${i+1} report" maxlength="500" value="${esc(p.report)}" oninput="updateDraft(${i},'report',this.value)"${disabled}></td><td><button type="button" class="btn-light btn-small" aria-label="Remove row ${i+1}" onclick="removeDraftRow(${i})"${disabled}>✕</button></td></tr>`).join('');
+    $('addDraftRowBtn').disabled=draftPending;
+    $('unlockDraftBtn').classList.toggle('hidden', !draftPending); $('unlockDraftBtn').disabled=draftSaving;
+    $('addBundleBtn').textContent=draftPending?'RETRY SAVE':'SAVE ALL BUNDLES';
+    persistDrafts();
+  }
+  function draftShortage(p) { return p.supplierMtr !== '' && p.ourMtr !== '' ? fmt(Number(p.supplierMtr)-Number(p.ourMtr)) : '—'; }
+  function updateDraft(i,key,value) {
+    if(draftPending || !draftRows[i] || ['series','dno','supplierMtr','ourMtr','report'].indexOf(key)<0)return;
+    draftRows[i][key]=value;
+    $('draftShort'+i).textContent=draftShortage(draftRows[i]);
+    persistDrafts();
+  }
+  function addDraftRow() {
+    if(draftPending)return;
+    if(draftRows.length>=100) { showMsg('bundleMsg','A draft can have at most 100 rows. Save these rows before adding more.','error'); return; }
+    draftRows.push(newDraft()); renderDraftTable();
+  }
+  function removeDraftRow(i) {
+    if(draftPending)return;
+    if(hasDraftContent(draftRows[i]) && !confirm('Remove this unfinished row?'))return;
+    draftRows.splice(i,1); renderDraftTable();
+  }
+  function unlockDraft() {
+    if(!draftPending || draftSaving)return;
+    if(!confirm('Some rows may already be saved. Check Saved Bundles before editing or removing rows. Existing saved rows will not be removed. Unlock draft?'))return;
+    draftPending=false; renderDraftTable();
+  }
+  function bundleInputValid(p) {
+    return !!String(p.series||'').trim() && !!String(p.dno||'').trim() && p.supplierMtr !== '' && p.ourMtr !== '' && Number.isFinite(Number(p.supplierMtr)) && Number.isFinite(Number(p.ourMtr)) && Number(p.supplierMtr) >= 0 && Number(p.ourMtr) >= 0;
+  }
+  function validateDrafts() {
+    const entered=draftRows.filter(hasDraftContent);
+    if(!entered.length) return {rows:[], error:'Enter at least one bundle row.'};
+    for(let i=0;i<draftRows.length;i++) {
+      const p=draftRows[i]; if(!hasDraftContent(p))continue;
+      if(!bundleInputValid(p)) return {rows:[],error:'Complete all required fields with valid non-negative metres in row '+(i+1)+'. No rows were sent.'};
+      if(String(p.series).length>200 || String(p.dno).length>200 || String(p.report||'').length>500) return {rows:[],error:'Text is too long in row '+(i+1)+'. No rows were sent.'};
+    }
+    return {rows:entered,error:''};
+  }
+  function saveDraftBatch(onSuccess,onFailure) {
+    const check=validateDrafts();
+    if(check.error) { onFailure(check.error, false); return; }
+    const requestChallan=currentChallanId, requestSeq=++draftRequestSeq;
+    // Persist the stable IDs and freeze the exact payload before requesting a write.
+    draftPending=true;
+    if(!persistDrafts()) { draftPending=false; persistDrafts(); onFailure('Cannot safely save: phone draft storage is unavailable. Enable browser storage and try again.',false); return; }
+    draftSaving=true; renderDraftTable();
+    call('apiAddBundleBatch',[sessionToken,requestChallan,check.rows],d=>{
+      if(currentChallanId!==requestChallan || requestSeq!==draftRequestSeq)return;
+      draftSaving=false; currentData=d; draftRows=[newDraft()]; draftPending=false; persistDrafts(); renderWorkspace(); loadRecentSeries();
+      onSuccess(d,check.rows);
+    },m=>{
+      if(currentChallanId!==requestChallan || requestSeq!==draftRequestSeq)return;
+      draftSaving=false; draftPending=true; renderDraftTable(); onFailure('Save not confirmed. Some rows may already be saved. Retry these unchanged rows. '+m,true);
+    });
+  }
+  function addBundle() {
+    if ($('addBundleBtn').disabled) return;
+    hideMsg('bundleMsg'); setBusy('addBundleBtn',true,'Saving…');
+    saveDraftBatch((d,rows)=>{setBusy('addBundleBtn',false);$('addBundleBtn').textContent='SAVE ALL BUNDLES'; showMsg('bundleMsg','✓ '+rows.length+' bundle(s) saved.','success');},
+      (m)=>{setBusy('addBundleBtn',false);$('addBundleBtn').textContent=draftPending?'RETRY SAVE':'SAVE ALL BUNDLES';showMsg('bundleMsg',m,'error');});
+  }
+  function openBundleEdit(id) {
+    const b = currentData.bundles.find(x => x.id === id);
+    if (!b) return;
+    $('editBundleId').value = id;
+    $('editSeries').value = b.series; $('editDno').value = b.dno;
+    $('editSupplier').value = b.supplierMtr; $('editOur').value = b.ourMtr;
+    $('editReport').value = b.report;
+    hideMsg('editBundleMsg');
+    $('bundleEditModal').classList.remove('hidden');
+  }
+  function saveBundleEdit() {
+    if ($('editBundleSaveBtn').disabled) return;
+    const id = $('editBundleId').value;
+    const p = { series: $('editSeries').value, dno: $('editDno').value, supplierMtr: $('editSupplier').value, ourMtr: $('editOur').value, report: $('editReport').value };
+    if (!p.series.trim() || !p.dno.trim()) { showMsg('editBundleMsg', 'Series and Design No. are required.', 'error'); return; }
+    if (p.supplierMtr === '' || p.ourMtr === '' || !Number.isFinite(Number(p.supplierMtr)) || !Number.isFinite(Number(p.ourMtr)) || Number(p.supplierMtr) < 0 || Number(p.ourMtr) < 0) {
+      showMsg('editBundleMsg', 'Enter valid non-negative metre values.', 'error'); return;
+    }
+    setBusy('editBundleSaveBtn', true, 'Saving…');
+    call('apiUpdateBundle', [sessionToken, currentChallanId, id, p], d => {
+      setBusy('editBundleSaveBtn', false); currentData = d; closeModal('bundleEditModal'); renderWorkspace(); loadRecentSeries();
+      toast('Bundle updated.', 'success');
+    }, m => { setBusy('editBundleSaveBtn', false); showMsg('editBundleMsg', m, 'error'); });
+  }
+  function deleteBundle(id, button) {
+    if (button && button.disabled) return;
+    if (!confirm('Delete this bundle row from the challan?')) return;
+    setBusyElement(button, true, 'Deleting…');
+    call('apiDeleteBundle', [sessionToken, currentChallanId, id], d => {
+      setBusyElement(button, false); currentData = d; renderWorkspace(); loadRecentSeries();
+      toast('Bundle deleted.', 'success');
+    }, m => { setBusyElement(button, false); toast('Could not confirm deletion: ' + m + '. Check the bundle list before retrying.', 'error'); });
+  }
+
+  /* ---------- challan details edit / status ---------- */
+  function openChallanEdit() {
+    const c = currentData.challan;
+    $('editChallanSupplier').value = c.supplier; $('editChallanNo').value = c.challanNo;
+    $('editChallanDate').value = c.date; $('editChallanWidth').value = c.width; $('editChallanLot').value = c.dyeingLot;
+    hideMsg('editChallanMsg');
+    $('challanEditModal').classList.remove('hidden');
+  }
+  function saveChallanEdit() {
+    if ($('editChallanSaveBtn').disabled) return;
+    const p = { supplierName: $('editChallanSupplier').value, challanNo: $('editChallanNo').value, challanDate: $('editChallanDate').value, width: $('editChallanWidth').value, dyeingLot: $('editChallanLot').value };
+    if (!p.supplierName.trim() || !p.challanNo.trim() || !p.challanDate) { showMsg('editChallanMsg', 'Supplier, challan number and date are required.', 'error'); return; }
+    setBusy('editChallanSaveBtn', true, 'Saving…');
+    call('apiUpdateChallanDetails', [sessionToken, currentChallanId, p], () => {
+      setBusy('editChallanSaveBtn', false); closeModal('challanEditModal'); openChallan(currentChallanId);
+      toast('Challan details saved.', 'success');
+    }, m => { setBusy('editChallanSaveBtn', false); showMsg('editChallanMsg', m, 'error'); });
+  }
+  function changeCurrentStatus(next, button) {
+    if (button && button.disabled) return;
+    const label = next === 'COMPLETED' ? 'mark this challan completed?' : 'reopen this challan?';
+    if (!confirm('Are you sure you want to ' + label)) return;
+    setBusyElement(button, true, 'Updating…');
+    call('apiSetChallanStatus', [sessionToken, currentChallanId, next], d => {
+      setBusyElement(button, false); currentData = d; renderWorkspace();
+      toast(next === 'COMPLETED' ? 'Challan completed and locked.' : 'Challan reopened for entry.', 'success');
+    }, m => { setBusyElement(button, false); showMsg('statusMsg', m, 'error'); });
+  }
+  function changeStatus(id, next, button) {
+    if (button && button.disabled) return;
+    const action = next === 'COMPLETED' ? 'mark this challan completed?' : 'reopen this challan?';
+    if (!confirm('Are you sure you want to ' + action)) return;
+    setBusyElement(button, true, 'Updating…');
+    call('apiSetChallanStatus', [sessionToken, id, next], () => { setBusyElement(button, false); refreshDashboard(); }, m => { setBusyElement(button, false); toast(m, 'error'); });
+  }
+
+  /* ---------- bundle shortcut from dashboard ---------- */
+  function openBundleLookup() {
+    $('lookupChallanNo').value = '';
+    hideMsg('lookupMsg');
+    $('bundleLookupModal').classList.remove('hidden');
+    $('lookupChallanNo').focus();
+    loadRecentChallans();
+  }
+  function loadRecentChallans() {
+    call('apiListChallans', [sessionToken, '', 'OPEN'], rows => {
+      const top = (rows || []).slice(0, 8);
+      $('recentChallans').innerHTML = top.length
+        ? top.map(r => `<div class="recent-item"><div><strong>${esc(r.challanNo)}</strong><div class="subtle">${esc(r.supplier)} · ${esc(r.date)} · ${r.bundles} bundles</div></div><button class="btn-primary btn-small" onclick="closeModal('bundleLookupModal');openChallan('${esc(r.id)}',this)">OPEN</button></div>`).join('')
+        : '<div class="subtle">No open challans yet. Create a challan first.</div>';
+    }, () => {});
+  }
+  function goToBundleChallan() {
+    if ($('lookupBtn').disabled) return;
+    hideMsg('lookupMsg');
+    const no = $('lookupChallanNo').value.trim();
+    if (!no) { showMsg('lookupMsg', 'Enter a challan number.', 'error'); return; }
+    setBusy('lookupBtn', true, 'Searching…');
+    call('apiFindChallan', [sessionToken, no], r => {
+      setBusy('lookupBtn', false);
+      closeModal('bundleLookupModal');
+      openChallan(r.id);
+    }, m => { setBusy('lookupBtn', false); showMsg('lookupMsg', m, 'error'); });
+  }
+  function closeModal(id) { $(id).classList.add('hidden'); }
+
+  /* ---------- admin alerts ---------- */
+  function loadAlerts(manual) {
+    if (!currentUser || currentUser.role !== 'ADMIN') return;
+    if (manual) { if ($('refreshAlertsBtn').disabled) return; setBusy('refreshAlertsBtn', true, 'Refreshing…'); }
+    const request = ++alertsRequest;
+    call('apiGetOpenAlerts', [sessionToken], rows => {
+      if (manual) setBusy('refreshAlertsBtn', false);
+      if (request !== alertsRequest) return;
+      $('alertsList').innerHTML = rows.length
+        ? rows.map(a => `<div class="alert-item"><strong>${esc(a.category)} · ${esc(a.id)}</strong><div class="subtle">${esc(a.worker)} · Challan ${esc(a.challanNo || '—')} · Bundle ${esc(a.bundleNo || '—')} · ${esc(fmtDT(a.createdAt))}</div><div style="margin-top:6px">${esc(a.details || 'No typed note')} · <b>${esc(a.status)}</b> ${a.voiceFileId ? '· 🎙 Voice note attached' : ''}</div><div class="alert-actions">${a.acknowledged ? '' : `<button class="btn-primary btn-small" onclick="alertAction('${esc(a.id)}','ack',this)">ACKNOWLEDGE</button>`}<button class="btn-light btn-small" onclick="alertAction('${esc(a.id)}','resolve',this)">RESOLVE</button>${a.challanId ? `<button class="btn-outline btn-small" onclick="openChallan('${esc(a.challanId)}',this)">OPEN CHALLAN</button>` : ''}</div></div>`).join('')
+        : '<div class="empty">No unresolved alerts.</div>';
+    }, m => { if (manual) setBusy('refreshAlertsBtn', false); if (request === alertsRequest) { $('alertsList').textContent = m; showErrorPopup('Could not load alerts: ' + m); } });
+  }
+  function alertAction(id, action, button) {
+    if (button && button.disabled) return;
+    const fn = action === 'ack' ? 'apiAcknowledgeAlert' : 'apiResolveAlert';
+    setBusyElement(button, true, 'Updating…');
+    call(fn, [sessionToken, id], () => { setBusyElement(button, false); loadAlerts(); }, m => { setBusyElement(button, false); toast(m, 'error'); });
+  }
+
+  /* ---------- emergency ---------- */
+  function openEmergency() {
+    emergencyBundleAttempt = null;
+    $('emergencyCategory').value = '';
+    $('emergencyDetails').value = '';
+    hideMsg('emergencyMsg');
+    setVoiceControlsBusy(false); clearVoice();
+    const c = currentData.challan;
+    $('emergencyContext').textContent = 'Employee: ' + currentUser.name + ' · Challan: ' + c.challanNo + ' · Next bundle: ' + (currentData.bundles.length + 1);
+    $('emergencyModal').classList.remove('hidden');
+  }
+  function closeEmergency() { clearVoice(); closeModal('emergencyModal'); }
+  function setVoiceControlsBusy(busy) {
+    ['voiceExternalButton','voiceNativeButton','voiceUploadButton','recordButton','clearVoiceButton','cancelEmergencyBtn'].forEach(id => { $(id).disabled = busy; });
+  }
+  function openExternalRecorder() {
+    if ($('sendEmergencyBtn').disabled) return;
+    let url;
+    try {
+      url=new URL(recorderUrl);
+      if(url.protocol!=='https:' || url.username || url.password) throw new Error('Invalid URL');
+      if(!window.location.origin || window.location.origin==='null') throw new Error('Invalid app origin');
+    } catch(e) { showMsg('emergencyMsg','The external recorder is not configured. Ask the administrator to set RECORDER_PAGE_URL.', 'error'); return; }
+    clearVoice(); hideMsg('emergencyMsg');
+    const nonceBytes=new Uint8Array(16); crypto.getRandomValues(nonceBytes);
+    recorderNonce=Array.from(nonceBytes,x=>x.toString(16).padStart(2,'0')).join('');
+    recorderOrigin=url.origin;
+    url.searchParams.set('recorder','1');
+    url.hash=new URLSearchParams({origin:window.location.origin,nonce:recorderNonce}).toString();
+    recorderWindow=window.open(url.href,'_blank');
+    if(!recorderWindow) { recorderNonce=''; showMsg('emergencyMsg','The recording tab was blocked. Allow pop-ups for this app and try again.','error'); return; }
+    voiceProcessing=true;
+    $('clearVoiceButton').classList.remove('hidden');
+    $('clearVoiceButton').textContent='CANCEL RECORDING';
+    $('recordingLabel').textContent='Recording tab open…';
+  }
+  window.addEventListener('message', function(e) {
+    if(!recorderWindow || e.source!==recorderWindow || e.origin!==recorderOrigin || !e.data || e.data.type!=='KT_VOICE_READY' || e.data.nonce!==recorderNonce || $('sendEmergencyBtn').disabled || $('emergencyModal').classList.contains('hidden')) return;
+    try {
+      const match=String(e.data.audio||'').match(/^data:(audio\/(?:webm|ogg|mp4));base64,([A-Za-z0-9+/=]+)$/);
+      if(!match || match[2].length>3333340) throw new Error('Unsupported or oversized audio');
+      const binary=atob(match[2]); if(!binary.length || binary.length>2500000)throw new Error('Empty or oversized audio');
+      const bytes=new Uint8Array(binary.length); for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+      const blob=new Blob([bytes],{type:match[1]});
+      voiceData=e.data.audio; voiceMime=match[1]; voiceProcessing=false;
+      voicePreviewUrl=URL.createObjectURL(blob); $('voicePreview').src=voicePreviewUrl; $('voicePreview').classList.remove('hidden');
+      $('clearVoiceButton').classList.remove('hidden'); $('clearVoiceButton').textContent='REMOVE VOICE';
+      $('recordingLabel').textContent='Voice note ready';
+      e.source.postMessage({type:'KT_VOICE_ACK',nonce:recorderNonce},recorderOrigin);
+      recorderWindow=null; recorderNonce=''; recorderOrigin='';
+    } catch(err) { voiceProcessing=false; $('recordingLabel').textContent=''; showMsg('emergencyMsg','Could not receive the recording. Try a shorter recording or send a typed note.','error'); }
+  });
+  function openVoicePicker(id) {
+    if ($('sendEmergencyBtn').disabled) return;
+    $(id).value = ''; // Allow choosing the same file again.
+    $(id).click();
+  }
+  function audioTypeForFile(file) {
+    const types = {mp3:'audio/mpeg',m4a:'audio/mp4',mp4:'audio/mp4',aac:'audio/aac',wav:'audio/wav',ogg:'audio/ogg',opus:'audio/ogg',webm:'audio/webm','3gp':'audio/3gpp','3gpp':'audio/3gpp','3g2':'audio/3gpp2',amr:'audio/amr',flac:'audio/flac'};
+    const aliases = {'audio/mp4a-latm':'audio/mp4','audio/x-m4a':'audio/mp4','audio/m4a':'audio/mp4','audio/mp3':'audio/mpeg','audio/x-mpeg':'audio/mpeg','audio/x-wav':'audio/wav','audio/wave':'audio/wav','audio/vnd.wave':'audio/wav','audio/x-aac':'audio/aac','audio/x-flac':'audio/flac','application/ogg':'audio/ogg'};
+    const mime = String(file.type || '').split(';')[0].trim().toLowerCase();
+    const extension = String(file.name || '').toLowerCase().split('.').pop();
+    return aliases[mime] || (Object.values(types).indexOf(mime) >= 0 ? mime : '') || types[extension] || '';
+  }
+  function prepareVoiceBlob(blob, mime, generation) {
+    voiceProcessing = true;
+    $('recordingLabel').textContent = 'Preparing voice note…';
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      if (generation !== voiceGeneration) return;
+      voiceProcessing = false;
+      if (reader.error || !reader.result) {
+        $('recordingLabel').textContent = '';
+        showMsg('emergencyMsg', 'Could not read the audio. Please select it again or send a typed note.', 'error');
+        return;
+      }
+      voiceData = reader.result; voiceMime = mime;
+      voicePreviewUrl = URL.createObjectURL(blob);
+      $('voicePreview').src = voicePreviewUrl;
+      $('voicePreview').classList.remove('hidden');
+      $('clearVoiceButton').classList.remove('hidden');
+      $('recordButton').textContent = 'RECORD IN BROWSER';
+      $('recordingLabel').textContent = 'Voice note ready';
+    };
+    // Rewrap to produce a data URL without codec parameters; Apps Script accepts it.
+    try { reader.readAsDataURL(blob.slice(0, blob.size, mime)); }
+    catch (e) { voiceProcessing = false; $('recordingLabel').textContent = ''; showMsg('emergencyMsg', 'Could not read the audio. Please try another file.', 'error'); }
+  }
+  function handleVoiceFile(input) {
+    if ($('sendEmergencyBtn').disabled) { input.value = ''; return; }
+    const file = input.files && input.files[0];
+    if (!file) return; // Cancelling a picker keeps the existing attachment.
+    clearVoice(); hideMsg('emergencyMsg');
+    const mime = audioTypeForFile(file);
+    if (!mime) { showMsg('emergencyMsg', 'Unsupported audio type. Choose an MP3, M4A, AAC, WAV, OGG, WebM, 3GP, AMR or FLAC file.', 'error'); return; }
+    if (!file.size || file.size > 2500000) { showMsg('emergencyMsg', 'Audio must be non-empty and no larger than 2.5 MB. Choose a shorter recording.', 'error'); return; }
+    prepareVoiceBlob(file, mime, voiceGeneration);
+  }
+  async function toggleRecording() {
+    if ($('sendEmergencyBtn').disabled) return;
+    if (mediaRecorder && mediaRecorder.state === 'recording') { voiceProcessing = true; mediaRecorder.stop(); return; }
+    clearVoice(); hideMsg('emergencyMsg');
+    const generation = ++voiceGeneration;
+    let stream;
+    voiceProcessing = true;
+    $('recordingLabel').textContent = 'Opening microphone…';
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      if (generation !== voiceGeneration) { stream.getTracks().forEach(t => t.stop()); return; }
+      voiceProcessing = false;
+      recordedChunks = [];
+      mediaRecorder = new MediaRecorder(stream);
+      voiceMime = (mediaRecorder.mimeType || 'audio/webm').split(';')[0].toLowerCase();
+      mediaRecorder.ondataavailable = e => { if (generation === voiceGeneration && e.data && e.data.size) recordedChunks.push(e.data); };
+      mediaRecorder.onstop = () => {
+        stream.getTracks().forEach(t => t.stop());
+        clearTimeout(recordTimer);
+        if (generation !== voiceGeneration) return;
+        const blob = new Blob(recordedChunks, { type: voiceMime });
+        if (!blob.size || blob.size > 2500000) { clearVoice(); showMsg('emergencyMsg', 'Voice note is empty or too large. Try a shorter recording.', 'error'); return; }
+        prepareVoiceBlob(blob, voiceMime, generation);
+      };
+      mediaRecorder.start();
+      $('recordButton').textContent = '■ STOP RECORDING';
+      $('recordingLabel').textContent = 'Recording… max 60 sec';
+      recordTimer = setTimeout(() => { if (generation === voiceGeneration && mediaRecorder && mediaRecorder.state === 'recording') { voiceProcessing = true; mediaRecorder.stop(); } }, 60000);
+    } catch (e) {
+      if (stream) stream.getTracks().forEach(t => t.stop());
+      if (generation === voiceGeneration) { voiceProcessing = false; $('recordingLabel').textContent = ''; showMsg('emergencyMsg', 'Browser recording is unavailable. Use PHONE RECORDER or ATTACH AUDIO instead.', 'error'); }
+    }
+  }
+  function stopRecordingQuiet() { try { if (mediaRecorder && mediaRecorder.state === 'recording') mediaRecorder.stop(); } catch (e) {} clearTimeout(recordTimer); }
+  function clearVoice() {
+    voiceGeneration++; voiceProcessing = false;
+    if (recorderWindow) { try { recorderWindow.close(); } catch(e) {} } recorderWindow=null; recorderNonce=''; recorderOrigin='';
+    stopRecordingQuiet(); mediaRecorder = null;
+    voiceData = ''; voiceMime = ''; recordedChunks = [];
+    try { $('voicePreview').pause(); } catch (e) {}
+    $('voicePreview').removeAttribute('src'); $('voicePreview').classList.add('hidden');
+    if (voicePreviewUrl) { URL.revokeObjectURL(voicePreviewUrl); voicePreviewUrl = ''; }
+    $('voiceCaptureInput').value = ''; $('voiceFileInput').value = '';
+    $('clearVoiceButton').classList.add('hidden'); $('clearVoiceButton').textContent='REMOVE VOICE';
+    $('recordButton').textContent = 'RECORD IN BROWSER';
+    $('recordingLabel').textContent = '';
+  }
+  function sendEmergency() {
+    if ($('sendEmergencyBtn').disabled) return;
+    hideMsg('emergencyMsg');
+    const category = $('emergencyCategory').value;
+    if (!category) { showMsg('emergencyMsg', 'Choose a problem category.', 'error'); return; }
+    if (voiceProcessing || (mediaRecorder && mediaRecorder.state === 'recording')) { showMsg('emergencyMsg', 'Stop the voice recording and wait for it to be ready before submitting.', 'error'); return; }
+    const entered = draftRows.filter(hasDraftContent);
+    const bundleInfo = entered.length + ' draft bundle row(s).';
+    setBusy('sendEmergencyBtn', true, 'Submitting…');
+    setVoiceControlsBusy(true);
+    function submitAlert() {
+      const attempt = emergencyBundleAttempt;
+      const ctx = { challanId: currentChallanId, category: category, details: $('emergencyDetails').value,
+        bundleNo: attempt.bundleNo, bundleInfo: attempt.bundleInfo, voiceData: voiceData, voiceMime: voiceMime };
+      call('apiCreateEmergency', [sessionToken, ctx], r => {
+        setBusy('sendEmergencyBtn', false);
+        setVoiceControlsBusy(false);
+        closeEmergency();
+        const warning = attempt.warning || '';
+        const message = 'Emergency submitted. Alert ID: ' + r.alertId + '. ' + r.notice + (warning ? '\n\n' + warning : '');
+        if (!r.telegramSent || warning || /failed|could not/i.test(r.notice)) showErrorPopup(message);
+        else toast('Emergency submitted. Bundle saved.', 'success');
+      }, m => { setBusy('sendEmergencyBtn', false); setVoiceControlsBusy(false); showMsg('emergencyMsg', 'Could not confirm emergency submission: ' + m + '. The bundle may already be saved. Check the alerts and bundle list before retrying to avoid duplicates.', 'error'); });
+    }
+    // Remember the result across a failed alert submission: retrying the alert
+    // must not save the same bundle a second time.
+    if (emergencyBundleAttempt) { submitAlert(); return; }
+    if (draftSaving) {
+      emergencyBundleAttempt={bundleNo:'',bundleInfo:'BUNDLE SAVE IN PROGRESS — '+bundleInfo,warning:'A bundle save was already in progress. Check Saved Bundles after the alert.'};
+      submitAlert(); return;
+    }
+    const check=validateDrafts();
+    if (currentData.challan.status !== 'OPEN' || check.error) {
+      emergencyBundleAttempt = {bundleNo:'',bundleInfo:'UNSAVED — '+bundleInfo,warning:entered.length ? 'Draft bundles were not saved because at least one row is incomplete or the challan is closed. Drafts remain on this phone.' : 'No draft bundle rows were entered.'};
+      submitAlert(); return;
+    }
+    saveDraftBatch((d,rows)=>{
+      const last=rows[rows.length-1], saved=d.bundles.find(x=>x.id===last.id);
+      emergencyBundleAttempt={bundleNo:saved?String(saved.rowNo):'',bundleInfo:rows.length+' draft bundle row(s) saved.',warning:''};
+      submitAlert();
+    },(m)=>{
+      emergencyBundleAttempt={bundleNo:'',bundleInfo:'SAVE UNCONFIRMED — '+bundleInfo,warning:'Bundle save could not be confirmed. Some rows may already be saved. Retry the unchanged draft after the alert. '+m};
+      submitAlert();
+    });
+  }
+
+  /* ---------- printing ---------- */
+  function printChallan() {
+    if (!currentData) return;
+    const html = buildPrintHtml(currentData);
+    const iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0;visibility:hidden';
+    document.body.appendChild(iframe);
+    iframe.onload = function () {
+      try {
+        iframe.contentWindow.document.open();
+        iframe.contentWindow.document.write(html);
+        iframe.contentWindow.document.close();
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+      } catch (e) { window.print(); }
+      setTimeout(() => { if (iframe.parentNode) iframe.parentNode.removeChild(iframe); }, 1000);
+    };
+    iframe.src = 'about:blank';
+  }
+  function buildPrintHtml(data) {
+    const c = data.challan, bs = data.bundles, t = data.totals, pages = [];
+    for (let i = 0; i < Math.max(1, Math.ceil(bs.length / 30)); i++) pages.push(bs.slice(i * 30, (i + 1) * 30));
+    const body = pages.map((rows, i) => {
+      const table = rows.length
+        ? rows.map(b => `<tr><td>${b.rowNo}</td><td>${esc(b.series)}</td><td>${esc(b.dno)}</td><td class="num">${fmt(b.supplierMtr)}</td><td class="num">${fmt(b.ourMtr)}</td><td class="num">${fmt(b.shortageMtr)}</td><td>${esc(b.report || '')}</td></tr>`).join('')
+        : '';
+      const blanks = Array.from({ length: Math.max(0, 30 - rows.length) }, () => '<tr><td> </td><td></td><td></td><td></td><td></td><td></td><td></td></tr>').join('');
+      return `<section class="print-page">
+  <div class="print-head"><div><h2>KAMLESH TEXTILES</h2><b>FABRIC CHALLAN / BUNDLE REGISTER</b></div><div style="text-align:right">Challan ${esc(c.challanNo)} · Supplier ${esc(c.supplier)}<br>Page ${i + 1} of ${pages.length} · ${esc(localToday())}</div></div>
+  <div class="print-meta">${[['Entry Date', c.entryDate], ['Supplier Name', c.supplier], ['Challan No.', c.challanNo], ['Challan Date', c.date], ['Width', c.width || '—'], ['Dyeing Lot', c.dyeingLot || '—'], ['Employee', c.worker || '—'], ['Status', c.status]].map(x => `<div><b>${x[0]}:</b> ${esc(x[1])}</div>`).join('')}</div>
+  <table><thead><tr><th>No.</th><th>Series</th><th>Design No. / Col. No.</th><th>Supplier Mtr.</th><th>Our Mtr.</th><th>Shortage</th><th>Report / Cutting</th></tr></thead>
+  <tbody>${table}${blanks}</tbody></table>
+  <div class="print-totals"><b>Totals —</b> Supplier: ${fmt(t.supplier)} m &nbsp;|&nbsp; Our: ${fmt(t.ours)} m &nbsp;|&nbsp; Shortage: ${fmt(t.shortage)} m</div>
+  ${i === pages.length - 1 ? `<div class="signatures"><span>Packing Checker: __________________________</span><span>Godown Checker: __________________________</span></div><div class="signatures"><span>Prepared by: ${esc(c.worker || '')}</span><span>Checked date: __________________________</span></div>` : ''}
+</section>`;
+    }).join('');
+    return `<!doctype html><html><head><meta charset="utf-8"><title>Challan ${esc(c.challanNo)}</title><style>
+@page{size:A4 portrait;margin:10mm}*{box-sizing:border-box}body{font-family:Arial,sans-serif;color:#111;margin:0;font-size:10px}.print-page{page-break-after:always;min-height:275mm;display:flex;flex-direction:column}.print-page:last-child{page-break-after:auto}.print-head{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #222;padding-bottom:8px}.print-head h2{font-size:18px;margin:0 0 3px}.print-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;border:1px solid #333;padding:9px;margin:10px 0}.print-meta div{font-size:10px}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border:1px solid #444;padding:5px 4px;font-size:9px;overflow-wrap:anywhere}th{background:#eee}th:nth-child(1){width:7%}th:nth-child(2){width:12%}th:nth-child(3){width:19%}th:nth-child(4),th:nth-child(5),th:nth-child(6){width:12%}th:nth-child(7){width:26%}.num{text-align:right}.print-totals{padding:9px;border:1px solid #333;margin-top:10px;font-size:11px}.signatures{display:flex;justify-content:space-between;margin-top:22px;font-size:10px}.print-page:after{content:'';flex:1}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style></head><body>${body}<script>window.onload=()=>{window.print()}<\/script></body></html>`;
+  }
+
+  /* Inline HTML handlers execute in global scope; strict-mode block functions do not.
+     Expose only the UI entry points, including those used by generated rows. */
+  Object.assign(window, {
+    login, logout, loadUsers, checkAppStatus, retrySetup, showDashboard, showCreate, closeError,
+    refreshDashboard, refreshTable, debouncedRefresh, clearAdminFilters, sortBy,
+    createChallan, openChallan, changeStatus, changeCurrentStatus, openBundleLookup,
+    goToBundleChallan, openChallanEdit, saveChallanEdit, addBundle, addDraftRow, removeDraftRow, updateDraft, unlockDraft,
+    openBundleEdit, saveBundleEdit, deleteBundle, closeModal, loadAlerts, alertAction,
+    openEmergency, closeEmergency, toggleRecording, openExternalRecorder, openVoicePicker, handleVoiceFile, clearVoice, sendEmergency, printChallan
+  });
+
+  // A different account or logout in another tab must not leave this tab's
+  // previous account visible, and must not erase the newer tab's session.
+  window.addEventListener('storage', e => {
+    if ((e.key === TOKEN_KEY || e.key === null) && sessionToken && e.newValue !== sessionToken) {
+      const oldToken = sessionToken;
+      call('apiLogout', [oldToken], () => {}, () => {});
+      clearSession(true); showLogin();
+      showMsg('loginMsg', 'Account changed in another tab. Please sign in again.', 'warn');
+    }
+  });
+
+  /* ---------- boot ---------- */
+  $('newChallanDate').value = localToday();
+  if (sessionToken && currentUser) {
+    call('apiValidateSession', [sessionToken], r => {
+      currentUser = r.user;
+      enterApp();
+    }, () => { clearSession(); showLogin(); });
+  } else {
+    showLogin();
+  }
+}
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ceaa7c1ea83ee3',t:'MTc5NTA4NTU1Mg=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ceaa7c1ea83ee3',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
